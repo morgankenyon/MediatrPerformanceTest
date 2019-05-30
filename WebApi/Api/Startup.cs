@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Api.Handler;
 using Api.Regular;
+using Api.Singleton;
+using Api.Transient;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +31,9 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IRegularPassThrough, RegularPassThrough>();
+            services.AddScoped<IScopedPassThrough, ScopedPassThrough>();
+            services.AddSingleton<ISingletonPassThrough, SingletonPassThrough>();
+            services.AddTransient<ITransientPassThrough, TransientPassThrough>();
             services.AddMediatR(typeof(MediatrPassThroughHandler).Assembly);
         }
 

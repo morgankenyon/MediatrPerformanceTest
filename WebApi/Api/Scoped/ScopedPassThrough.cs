@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Api.Regular
 {
-    public class RegularPassThrough : IRegularPassThrough
+    public class ScopedPassThrough : IScopedPassThrough
     {
         public async Task<string> PassThrough(string message)
         {

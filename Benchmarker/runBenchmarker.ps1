@@ -1,0 +1,1 @@
+dotnet run --project .\Benchmarker\Benchmarker.csproj -c Release

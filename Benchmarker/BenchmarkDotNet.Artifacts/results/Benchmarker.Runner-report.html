@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 <meta charset='utf-8' />
-<title>Benchmarker.Runner-20190527-085850</title>
+<title>Benchmarker.Runner-20190528-082056</title>
 
 <style type="text/css">
 	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
@@ -22,10 +22,20 @@ Intel Core i7-7700HQ CPU 2.80GHz (Kaby Lake), 1 CPU, 8 logical and 4 physical co
 <pre><code></code></pre>
 
 <table>
-<thead><tr><th>Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Median</th><th>Ratio</th><th>RatioSD</th>
+<thead><tr><th> Method</th><th>N</th><th> Mean</th><th>Error</th><th>StdDev</th>
 </tr>
-</thead><tbody><tr><td>TestRegular</td><td>100</td><td>778.3 ms</td><td>15.51 ms</td><td>40.05 ms</td><td>774.8 ms</td><td>1.00</td><td>0.00</td>
-</tr><tr><td>TestMediatr</td><td>100</td><td>806.1 ms</td><td>16.04 ms</td><td>41.13 ms</td><td>820.3 ms</td><td>1.04</td><td>0.07</td>
+</thead><tbody><tr><td>TestScoped</td><td>300</td><td>99.55 ms</td><td>1.836 ms</td><td>1.533 ms</td>
+</tr><tr><td>TestTransient</td><td>300</td><td>102.96 ms</td><td>2.486 ms</td><td>2.204 ms</td>
+</tr><tr><td>TestSingleton</td><td>300</td><td>100.75 ms</td><td>1.896 ms</td><td>2.029 ms</td>
+</tr><tr><td>TestMediatr</td><td>300</td><td>103.31 ms</td><td>1.968 ms</td><td>1.841 ms</td>
+</tr><tr><td>TestScoped</td><td>1500</td><td>503.22 ms</td><td>9.832 ms</td><td>10.096 ms</td>
+</tr><tr><td>TestTransient</td><td>1500</td><td>510.82 ms</td><td>20.271 ms</td><td>22.531 ms</td>
+</tr><tr><td>TestSingleton</td><td>1500</td><td>529.53 ms</td><td>11.154 ms</td><td>21.221 ms</td>
+</tr><tr><td>TestMediatr</td><td>1500</td><td>530.10 ms</td><td>10.070 ms</td><td>11.988 ms</td>
+</tr><tr><td>TestScoped</td><td>20000</td><td>6,790.08 ms</td><td>117.529 ms</td><td>98.142 ms</td>
+</tr><tr><td>TestTransient</td><td>20000</td><td>6,829.87 ms</td><td>130.331 ms</td><td>144.863 ms</td>
+</tr><tr><td>TestSingleton</td><td>20000</td><td>6,876.44 ms</td><td>134.226 ms</td><td>235.086 ms</td>
+</tr><tr><td>TestMediatr</td><td>20000</td><td>6,932.56 ms</td><td>135.209 ms</td><td>189.544 ms</td>
 </tr></tbody></table>
 </body>
 </html>

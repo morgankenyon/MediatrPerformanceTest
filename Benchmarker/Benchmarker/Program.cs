@@ -15,15 +15,33 @@ namespace Benchmarker
             client.BaseAddress = new Uri("http://localhost:5000/api/");
         }
 
-        [Params(100)]
+        [Params(300, 1500, 20000)]
         public int N;
 
-        [Benchmark(Baseline =true)]
-        public void TestRegular()
+        [Benchmark]
+        public void TestScoped()
         {
             for (int i = 0; i < N; i++)
             {
-                var result = client.GetAsync("regular?message=helloworld").Result;
+                var result = client.GetAsync("scoped?message=helloworld").Result;
+            }
+        }
+
+        [Benchmark]
+        public void TestTransient()
+        {
+            for (int i = 0; i < N; i++)
+            {
+                var result = client.GetAsync("transient?message=helloworld").Result;
+            }
+        }
+
+        [Benchmark]
+        public void TestSingleton()
+        {
+            for (int i = 0; i < N; i++)
+            {
+                var result = client.GetAsync("singleton?message=helloworld").Result;
             }
         }
 

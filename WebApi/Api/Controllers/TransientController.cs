@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Api.Regular;
+using Api.Transient;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,19 +10,19 @@ namespace Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RegularController : ControllerBase
+    public class TransientController : ControllerBase
     {
-        private IRegularPassThrough regularPassThrough;
+        private ITransientPassThrough transientPassThrough;
 
-        public RegularController(IRegularPassThrough regularPassThrough)
+        public TransientController(ITransientPassThrough transientPassThrough)
         {
-            this.regularPassThrough = regularPassThrough;
+            this.transientPassThrough = transientPassThrough;
         }
 
         [HttpGet]
         public async Task<string> GetMessage(string message)
         {
-            return await regularPassThrough.PassThrough(message);
+            return await transientPassThrough.PassThrough(message);
         }
     }
 }

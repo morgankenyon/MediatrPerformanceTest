@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Api.Regular
 {
-    public interface IRegularPassThrough
+    public interface IScopedPassThrough
     {
         Task<string> PassThrough(string message);
     }
